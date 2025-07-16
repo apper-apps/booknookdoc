@@ -12,12 +12,16 @@ import DiscussionDetail from "@/components/pages/DiscussionDetail";
 import Quizzes from "@/components/pages/Quizzes";
 import QuizDetail from "@/components/pages/QuizDetail";
 import CreateClub from "@/components/pages/CreateClub";
+import Login from "@/components/pages/Login";
+import Signup from "@/components/pages/Signup";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background">
+<div className="min-h-screen bg-background">
       <Routes>
-<Route path="/" element={<Layout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="clubs" element={<Clubs />} />
           <Route path="clubs/create" element={<CreateClub />} />
