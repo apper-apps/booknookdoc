@@ -315,7 +315,7 @@ const CreateClub = () => {
                       <p className="text-primary/70">Upload a banner image</p>
                       <p className="text-xs text-primary/50">PNG, JPG up to 5MB</p>
                     </div>
-                  </div>
+</div>
                 )}
               </div>
               <input
@@ -325,14 +325,28 @@ const CreateClub = () => {
                 className="hidden"
                 id="banner-upload"
               />
-              <Button
-                variant="ghost"
-                onClick={() => document.getElementById('banner-upload').click()}
-                className="w-full"
-              >
-                <ApperIcon name="Upload" size={16} className="mr-2" />
-                {imagePreview ? "Change Image" : "Upload Image"}
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="ghost"
+                  onClick={() => document.getElementById('banner-upload').click()}
+                  className="flex-1"
+                >
+                  <ApperIcon name="Upload" size={16} className="mr-2" />
+                  {imagePreview ? "Change Image" : "Upload Image"}
+                </Button>
+                {imagePreview && (
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      setImagePreview(null);
+                      setFormData(prev => ({ ...prev, bannerImage: null }));
+                    }}
+                    className="text-error hover:text-error/80"
+                  >
+                    <ApperIcon name="Trash2" size={16} />
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
 

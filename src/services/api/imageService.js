@@ -1,11 +1,16 @@
 class ImageService {
   constructor() {
-    this.images = [
+this.images = [
       {
         Id: 1,
         url: "/api/placeholder/400/300",
         caption: "My current reading setup! So cozy ✨",
         userId: "user1",
+        user: {
+          Id: 1,
+          username: "bookworm_sarah",
+          avatar: "/api/placeholder/40/40"
+        },
         type: "shelfie",
         tags: ["books", "reading", "cozy"],
         bookTags: [1, 3],
@@ -18,6 +23,11 @@ class ImageService {
         url: "/api/placeholder/400/300",
         caption: "Look at this beautiful quote from ACOTAR! 💕",
         userId: "user2",
+        user: {
+          Id: 2,
+          username: "fantasy_lover",
+          avatar: "/api/placeholder/40/40"
+        },
         type: "quote",
         tags: ["acotar", "quotes", "fantasy"],
         bookTags: [2],

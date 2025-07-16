@@ -6,6 +6,7 @@ import Clubs from "@/components/pages/Clubs";
 import Books from "@/components/pages/Books";
 import Lists from "@/components/pages/Lists";
 import Profile from "@/components/pages/Profile";
+import Images from "@/components/pages/Images";
 import ClubDetail from "@/components/pages/ClubDetail";
 import BookDetail from "@/components/pages/BookDetail";
 import DiscussionDetail from "@/components/pages/DiscussionDetail";
@@ -14,7 +15,6 @@ import QuizDetail from "@/components/pages/QuizDetail";
 import CreateClub from "@/components/pages/CreateClub";
 import Login from "@/components/pages/Login";
 import Signup from "@/components/pages/Signup";
-
 function App() {
   return (
 <div className="min-h-screen bg-background">
@@ -27,9 +27,10 @@ function App() {
           <Route path="clubs/create" element={<CreateClub />} />
           <Route path="clubs/:id" element={<ClubDetail />} />
           <Route path="books" element={<Books />} />
-          <Route path="books/:id" element={<BookDetail />} />
+<Route path="books/:id" element={<BookDetail />} />
           <Route path="lists" element={<Lists />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="images" element={<Images />} />
           <Route path="discussions/:id" element={<DiscussionDetail />} />
           <Route path="quizzes" element={<Quizzes />} />
           <Route path="quiz/:id" element={<QuizDetail />} />

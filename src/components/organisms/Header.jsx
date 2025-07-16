@@ -71,8 +71,17 @@ if (location.pathname.startsWith("/quiz/")) {
                 size="sm"
                 className="relative p-2"
                 onClick={() => navigate("/quizzes")}
-              >
+>
                 <ApperIcon name="Brain" size={20} />
+              </Button>
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                className="relative p-2"
+                onClick={() => navigate("/images")}
+              >
+                <ApperIcon name="Image" size={20} />
               </Button>
               
               <Button

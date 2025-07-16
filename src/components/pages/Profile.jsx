@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import ApperIcon from "@/components/ApperIcon";
-import Badge from "@/components/atoms/Badge";
-import Avatar from "@/components/atoms/Avatar";
-import Button from "@/components/atoms/Button";
-import Card from "@/components/atoms/Card";
-import Textarea from "@/components/atoms/Textarea";
-import Input from "@/components/atoms/Input";
 import Error from "@/components/ui/Error";
 import Loading from "@/components/ui/Loading";
 import Clubs from "@/components/pages/Clubs";
 import Books from "@/components/pages/Books";
+import Card from "@/components/atoms/Card";
+import Textarea from "@/components/atoms/Textarea";
+import Avatar from "@/components/atoms/Avatar";
+import Input from "@/components/atoms/Input";
+import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
 import userService from "@/services/api/userService";
-
 const Profile = () => {
-const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
   const [stats, setStats] = useState(null);
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -395,6 +396,66 @@ const [userData, userStats, userActivities, userFollowers, userFollowing] = awai
                       <p className="text-primary/60 text-xs mt-1">
                         Author Name
                       </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+)}
+          </div>
+        </Card>
+        
+        {/* Image Gallery */}
+        <Card variant="elevated">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-serif font-semibold text-primary">
+                Image Gallery
+              </h3>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => navigate("/images")}
+              >
+                <ApperIcon name="Plus" size={16} className="mr-2" />
+                Add Image
+              </Button>
+            </div>
+            
+            {user?.images?.length === 0 ? (
+              <div className="text-center py-8">
+                <ApperIcon name="Image" size={48} className="mx-auto text-primary/40 mb-4" />
+                <p className="text-primary/70 mb-4">No images uploaded yet</p>
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={() => navigate("/images")}
+                >
+                  <ApperIcon name="Upload" size={16} className="mr-2" />
+                  Upload Your First Image
+                </Button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {user?.images?.slice(0, 6).map((image) => (
+                  <div key={image.Id} className="relative group">
+                    <img
+                      src={image.url}
+                      alt={image.caption}
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                      <div className="text-white text-center">
+                        <div className="flex items-center justify-center gap-4 text-sm">
+                          <span className="flex items-center gap-1">
+                            <ApperIcon name="Heart" size={14} />
+                            {image.likes || 0}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <ApperIcon name="MessageCircle" size={14} />
+                            {image.comments?.length || 0}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
