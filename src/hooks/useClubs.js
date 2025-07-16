@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import clubService from "@/services/api/clubService";
 
 export const useClubs = () => {
@@ -76,14 +76,13 @@ export const useClubs = () => {
       setError("");
       const data = await clubService.getJoinedClubs(userId);
       setClubs(data);
-    } catch (err) {
+} catch (err) {
       setError("Failed to load joined clubs. Please try again.");
       console.error("Error loading joined clubs:", err);
     } finally {
       setLoading(false);
     }
   };
-};
   
   const createClub = async (clubData) => {
     try {
@@ -115,4 +114,5 @@ export const useClubs = () => {
     searchClubs,
     getJoinedClubs,
     createClub,
+  };
 };
