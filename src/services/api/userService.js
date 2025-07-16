@@ -75,6 +75,75 @@ class UserService {
           },
         ];
         resolve(activities);
+}, 300);
+    });
+  }
+  
+  async followUser(userId, targetUserId) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ success: true, message: "User followed successfully" });
+      }, 300);
+    });
+  }
+  
+  async unfollowUser(userId, targetUserId) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ success: true, message: "User unfollowed successfully" });
+      }, 300);
+    });
+  }
+  
+  async getFollowers(userId) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const followers = [
+          { Id: 2, username: "BookwormBella", avatar: "/api/placeholder/32/32" },
+          { Id: 3, username: "FantasyFan", avatar: "/api/placeholder/32/32" },
+          { Id: 4, username: "RomanceReader", avatar: "/api/placeholder/32/32" }
+        ];
+        resolve(followers);
+      }, 300);
+    });
+  }
+  
+  async getFollowing(userId) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const following = [
+          { Id: 5, username: "BookClubHost", avatar: "/api/placeholder/32/32" },
+          { Id: 6, username: "AuthorLife", avatar: "/api/placeholder/32/32" }
+        ];
+        resolve(following);
+      }, 300);
+    });
+  }
+  
+  async getFeed(userId) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const feed = [
+          {
+            Id: 1,
+            type: "book_review",
+            user: { Id: 2, username: "BookwormBella", avatar: "/api/placeholder/32/32" },
+            content: "Just finished reading The Seven Husbands of Evelyn Hugo and I'm crying! 😭✨",
+            timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
+            likes: 23,
+            comments: 5
+          },
+          {
+            Id: 2,
+            type: "club_join",
+            user: { Id: 3, username: "FantasyFan", avatar: "/api/placeholder/32/32" },
+            content: "joined the Fantasy Lovers book club",
+            timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
+            likes: 8,
+            comments: 2
+          }
+        ];
+        resolve(feed);
       }, 300);
     });
   }

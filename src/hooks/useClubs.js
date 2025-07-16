@@ -83,6 +83,23 @@ export const useClubs = () => {
       setLoading(false);
     }
   };
+};
+  
+  const createClub = async (clubData) => {
+    try {
+      setError("");
+      const result = await clubService.create(clubData);
+      if (result.success) {
+        setClubs([result.club, ...clubs]);
+        return true;
+      }
+      return false;
+    } catch (err) {
+      setError("Failed to create club. Please try again.");
+      console.error("Error creating club:", err);
+      return false;
+    }
+  };
   
   useEffect(() => {
     loadClubs();
@@ -97,5 +114,5 @@ export const useClubs = () => {
     leaveClub,
     searchClubs,
     getJoinedClubs,
-  };
+    createClub,
 };

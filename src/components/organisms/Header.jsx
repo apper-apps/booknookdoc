@@ -10,19 +10,26 @@ const Header = ({ className, ...props }) => {
   const location = useLocation();
   const [notifications] = useState(3);
   
-  const getPageTitle = () => {
+const getPageTitle = () => {
     switch (location.pathname) {
       case "/":
         return "Home";
       case "/clubs":
         return "Book Clubs";
+      case "/clubs/create":
+        return "Create Club";
       case "/books":
         return "Discover Books";
       case "/lists":
         return "My Library";
       case "/profile":
         return "Profile";
+      case "/quizzes":
+        return "Quizzes";
       default:
+        if (location.pathname.startsWith("/quiz/")) {
+          return "Quiz";
+        }
         return "BookNook";
     }
   };
@@ -56,7 +63,16 @@ const Header = ({ className, ...props }) => {
           </motion.div>
         </div>
         
-        <div className="flex items-center gap-3">
+<div className="flex items-center gap-3">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="relative p-2"
+            onClick={() => window.location.href = "/quizzes"}
+          >
+            <ApperIcon name="Brain" size={20} />
+          </Button>
+          
           <Button
             variant="ghost"
             size="sm"

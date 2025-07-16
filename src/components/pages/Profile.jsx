@@ -1,44 +1,52 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import ApperIcon from "@/components/ApperIcon";
+import Badge from "@/components/atoms/Badge";
+import Avatar from "@/components/atoms/Avatar";
 import Button from "@/components/atoms/Button";
 import Card from "@/components/atoms/Card";
-import Avatar from "@/components/atoms/Avatar";
-import Badge from "@/components/atoms/Badge";
-import Input from "@/components/atoms/Input";
 import Textarea from "@/components/atoms/Textarea";
-import Loading from "@/components/ui/Loading";
+import Input from "@/components/atoms/Input";
 import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import Clubs from "@/components/pages/Clubs";
+import Books from "@/components/pages/Books";
 import userService from "@/services/api/userService";
 
 const Profile = () => {
-  const [user, setUser] = useState(null);
+const [user, setUser] = useState(null);
   const [stats, setStats] = useState(null);
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [isEditing, setIsEditing] = useState(false);
+  const [followers, setFollowers] = useState([]);
+  const [following, setFollowing] = useState([]);
+  const [isFollowing, setIsFollowing] = useState(false);
   const [editForm, setEditForm] = useState({
     username: "",
     bio: "",
     readingGoal: 50,
   });
-  
   const loadProfile = async () => {
     try {
       setLoading(true);
       setError("");
       
-      const [userData, userStats, userActivities] = await Promise.all([
+const [userData, userStats, userActivities, userFollowers, userFollowing] = await Promise.all([
         userService.getCurrentUser(),
         userService.getReadingStats("user1"),
         userService.getRecentActivity("user1"),
+        userService.getFollowers("user1"),
+        userService.getFollowing("user1"),
       ]);
       
       setUser(userData);
       setStats(userStats);
       setActivities(userActivities);
+      setFollowers(userFollowers);
+      setFollowing(userFollowing);
       
       setEditForm({
         username: userData.username,
@@ -65,8 +73,22 @@ const Profile = () => {
       toast.error("Failed to update profile");
       console.error("Error updating profile:", err);
     }
-  };
+};
   
+  const handleFollowToggle = async () => {
+    try {
+      const result = isFollowing 
+        ? await userService.unfollowUser("user1", user.Id)
+        : await userService.followUser("user1", user.Id);
+      
+      if (result.success) {
+        setIsFollowing(!isFollowing);
+        toast.success(isFollowing ? "Unfollowed user" : "Following user!");
+      }
+    } catch (err) {
+      toast.error("Failed to update follow status");
+    }
+  };
   const getActivityIcon = (type) => {
     switch (type) {
       case "book_finished":
@@ -248,10 +270,26 @@ const Profile = () => {
               <div className="text-xs text-primary/60">Discussions</div>
             </div>
           </Card>
-          <Card variant="flat" className="text-center">
+<Card variant="flat" className="text-center">
             <div className="space-y-1">
               <div className="text-xl font-bold text-info">{stats?.commentsPosted || 0}</div>
               <div className="text-xs text-primary/60">Comments</div>
+            </div>
+          </Card>
+        </div>
+        
+        {/* Social Stats */}
+        <div className="grid grid-cols-2 gap-4">
+          <Card variant="flat" className="text-center">
+            <div className="space-y-1">
+              <div className="text-xl font-bold text-primary">{followers.length}</div>
+              <div className="text-xs text-primary/60">Followers</div>
+            </div>
+          </Card>
+          <Card variant="flat" className="text-center">
+            <div className="space-y-1">
+              <div className="text-xl font-bold text-secondary">{following.length}</div>
+              <div className="text-xs text-primary/60">Following</div>
             </div>
           </Card>
         </div>

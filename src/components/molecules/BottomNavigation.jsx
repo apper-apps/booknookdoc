@@ -4,11 +4,11 @@ import ApperIcon from "@/components/ApperIcon";
 import { cn } from "@/utils/cn";
 
 const BottomNavigation = ({ className, ...props }) => {
-  const navItems = [
+const navItems = [
     { to: "/", icon: "Home", label: "Home" },
     { to: "/clubs", icon: "Users", label: "Clubs" },
     { to: "/books", icon: "Search", label: "Discover" },
-    { to: "/lists", icon: "BookOpen", label: "Library" },
+    { to: "/quizzes", icon: "Brain", label: "Quizzes" },
     { to: "/profile", icon: "User", label: "Profile" },
   ];
   

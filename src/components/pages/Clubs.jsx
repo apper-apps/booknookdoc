@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import ApperIcon from "@/components/ApperIcon";
@@ -12,6 +13,7 @@ import Empty from "@/components/ui/Empty";
 import { useClubs } from "@/hooks/useClubs";
 
 const Clubs = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [joinedClubIds, setJoinedClubIds] = useState([1, 2, 4]); // Mock joined clubs
@@ -190,10 +192,10 @@ const Clubs = () => {
                 Create your own book club and build a community around your favorite genres and books!
               </p>
             </div>
-            <Button
+<Button
               variant="accent"
               size="lg"
-              onClick={() => toast.info("Club creation feature coming soon!")}
+              onClick={() => navigate("/clubs/create")}
             >
               <ApperIcon name="Plus" size={20} className="mr-2" />
               Create New Club
