@@ -1,17 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import ApperIcon from "@/components/ApperIcon";
 import Avatar from "@/components/atoms/Avatar";
 import Button from "@/components/atoms/Button";
 import { cn } from "@/utils/cn";
-import authService from "@/services/api/authService";
-
+import { AuthContext } from "@/App";
 const Header = ({ className, ...props }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [notifications] = useState(3);
-  const [isAuthenticated, setIsAuthenticated] = useState(authService.isAuthenticated());
+  const userState = useSelector((state) => state.user);
+  const isAuthenticated = userState?.isAuthenticated || false;
 const getPageTitle = () => {
     switch (location.pathname) {
       case "/":
@@ -71,7 +72,7 @@ if (location.pathname.startsWith("/quiz/")) {
                 size="sm"
                 className="relative p-2"
                 onClick={() => navigate("/quizzes")}
->
+              >
                 <ApperIcon name="Brain" size={20} />
               </Button>
               
@@ -103,6 +104,19 @@ if (location.pathname.startsWith("/quiz/")) {
                 size="sm"
                 online={true}
               />
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-primary hover:text-primary/80"
+                onClick={() => {
+                  const { logout } = useContext(AuthContext);
+                  logout();
+                }}
+              >
+                <ApperIcon name="LogOut" size={16} className="mr-1" />
+                Logout
+              </Button>
             </>
           ) : (
             <>
