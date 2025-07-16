@@ -1,16 +1,18 @@
+import React, { useState } from "react";
 import { cn } from "@/utils/cn";
 
 const Avatar = ({ 
   src, 
-  alt, 
+  alt = "User avatar", 
   size = "md", 
-  className,
+  className = "",
   online = false,
   ...props 
 }) => {
-  const baseStyles = "relative rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden";
+  const [imageError, setImageError] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
   
-  const sizes = {
+const sizes = {
     xs: "w-6 h-6",
     sm: "w-8 h-8",
     md: "w-10 h-10",
@@ -30,12 +32,27 @@ const Avatar = ({
   
   return (
     <div className={cn(baseStyles, sizes[size], className)} {...props}>
-      {src ? (
-        <img 
-          src={src} 
-          alt={alt} 
-          className="w-full h-full object-cover"
-        />
+      {src && !imageError ? (
+        <>
+          <img 
+            src={src} 
+            alt={alt} 
+            className="w-full h-full object-cover"
+            onError={() => {
+              setImageError(true);
+              setImageLoading(false);
+            }}
+            onLoad={() => {
+              setImageLoading(false);
+            }}
+            style={{ display: imageLoading ? 'none' : 'block' }}
+          />
+          {imageLoading && (
+            <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-serif font-semibold">
+              <div className="animate-pulse">...</div>
+            </div>
+          )}
+        </>
       ) : (
         <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-serif font-semibold">
           {alt?.charAt(0)?.toUpperCase() || "?"}
