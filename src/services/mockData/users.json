@@ -1,0 +1,97 @@
+[
+  {
+    "Id": 1,
+    "username": "BookLover2024",
+    "email": "booklover@example.com",
+    "avatar": "/api/placeholder/64/64",
+    "bio": "Passionate reader of fantasy and romance novels. Always looking for my next book obsession!",
+    "favoriteBooks": [1, 6, 12],
+    "currentlyReading": [2, 5, 10],
+    "joinedClubs": [1, 2, 4],
+    "favoriteGenres": ["Fantasy", "Romance", "LGBTQ+"],
+    "readingGoal": 50,
+    "booksReadThisYear": 12,
+    "joinedAt": "2023-06-15T00:00:00.000Z",
+    "preferences": {
+      "theme": "light",
+      "notifications": true,
+      "spoilerWarnings": true
+    }
+  },
+  {
+    "Id": 2,
+    "username": "BookWyrm",
+    "email": "bookwyrm@example.com",
+    "avatar": "/api/placeholder/64/64",
+    "bio": "Dragon enthusiast and fantasy fiction aficionado. Moderator of Fantasy Lovers club.",
+    "favoriteBooks": [9, 4, 7],
+    "currentlyReading": [3],
+    "joinedClubs": [1, 5, 7],
+    "favoriteGenres": ["Fantasy", "Dark Academia", "Mythology"],
+    "readingGoal": 75,
+    "booksReadThisYear": 18,
+    "joinedAt": "2023-01-20T00:00:00.000Z",
+    "preferences": {
+      "theme": "dark",
+      "notifications": true,
+      "spoilerWarnings": true
+    }
+  },
+  {
+    "Id": 3,
+    "username": "FantasyFan",
+    "email": "fantasyfan@example.com",
+    "avatar": "/api/placeholder/64/64",
+    "bio": "Epic fantasy is my jam! Love discussing world-building and magic systems.",
+    "favoriteBooks": [9, 2, 4],
+    "currentlyReading": [1],
+    "joinedClubs": [1, 3],
+    "favoriteGenres": ["Fantasy", "Young Adult"],
+    "readingGoal": 40,
+    "booksReadThisYear": 8,
+    "joinedAt": "2023-09-10T00:00:00.000Z",
+    "preferences": {
+      "theme": "light",
+      "notifications": false,
+      "spoilerWarnings": true
+    }
+  },
+  {
+    "Id": 4,
+    "username": "RomanceReader",
+    "email": "romance@example.com",
+    "avatar": "/api/placeholder/64/64",
+    "bio": "Hopeless romantic who lives for HEAs and swoon-worthy love interests.",
+    "favoriteBooks": [1, 3, 5],
+    "currentlyReading": [7],
+    "joinedClubs": [2, 8],
+    "favoriteGenres": ["Romance", "Contemporary Fiction"],
+    "readingGoal": 60,
+    "booksReadThisYear": 15,
+    "joinedAt": "2023-04-05T00:00:00.000Z",
+    "preferences": {
+      "theme": "light",
+      "notifications": true,
+      "spoilerWarnings": false
+    }
+  },
+  {
+    "Id": 5,
+    "username": "YAEnthusiast",
+    "email": "yabooks@example.com",
+    "avatar": "/api/placeholder/64/64",
+    "bio": "Young adult fiction lover. Always here for the coming-of-age stories and teen romance.",
+    "favoriteBooks": [2, 10, 7],
+    "currentlyReading": [4],
+    "joinedClubs": [3, 8],
+    "favoriteGenres": ["Young Adult", "Romance"],
+    "readingGoal": 35,
+    "booksReadThisYear": 9,
+    "joinedAt": "2023-07-12T00:00:00.000Z",
+    "preferences": {
+      "theme": "light",
+      "notifications": true,
+      "spoilerWarnings": true
+    }
+  }
+]

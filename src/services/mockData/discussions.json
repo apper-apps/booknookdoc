@@ -1,0 +1,273 @@
+[
+  {
+    "Id": 1,
+    "clubId": 1,
+    "authorId": 1,
+    "title": "Dragons in fantasy: overused or timeless?",
+    "content": "I've been thinking about how dragons are portrayed in modern fantasy. Are they becoming too common, or do they still hold that magical appeal? What's your take on dragon representation in recent fantasy novels?",
+    "hasSpoilers": false,
+    "likes": 23,
+    "createdAt": "2024-01-15T10:30:00.000Z",
+    "author": {
+      "Id": 1,
+      "username": "DragonSeeker",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "Fantasy Lovers",
+    "comments": [
+      {
+        "Id": 101,
+        "authorId": 2,
+        "content": "I think dragons are timeless! Each author brings their own unique spin to them. Look at how differently they're portrayed in Temeraire vs. Game of Thrones.",
+        "hasSpoilers": false,
+        "likes": 8,
+        "createdAt": "2024-01-15T11:15:00.000Z",
+        "author": {
+          "Id": 2,
+          "username": "BookWyrm",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": [
+          {
+            "Id": 201,
+            "authorId": 3,
+            "content": "Completely agree! The emotional bond between Temeraire and Laurence is so different from the fear-based relationship in GoT.",
+            "hasSpoilers": false,
+            "likes": 3,
+            "createdAt": "2024-01-15T11:45:00.000Z",
+            "author": {
+              "Id": 3,
+              "username": "FantasyFan",
+              "avatar": "/api/placeholder/32/32"
+            },
+            "replies": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "clubId": 1,
+    "authorId": 4,
+    "title": "Magic systems: hard vs soft - which do you prefer?",
+    "content": "Brandon Sanderson's hard magic systems vs. Tolkien's soft magic - both have their merits. What's your preference and why?",
+    "hasSpoilers": false,
+    "likes": 31,
+    "createdAt": "2024-01-14T14:20:00.000Z",
+    "author": {
+      "Id": 4,
+      "username": "MagicStudent",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "Fantasy Lovers",
+    "comments": [
+      {
+        "Id": 102,
+        "authorId": 5,
+        "content": "Hard magic systems all the way! I love understanding the rules and limitations. Makes the victories feel more earned.",
+        "hasSpoilers": false,
+        "likes": 12,
+        "createdAt": "2024-01-14T15:00:00.000Z",
+        "author": {
+          "Id": 5,
+          "username": "RuleFollower",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": []
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "clubId": 1,
+    "authorId": 6,
+    "title": "SPOILERS: That ending in Priory of the Orange Tree",
+    "content": "I'm still processing that final battle scene and the revelations about the Nameless One. What did everyone think about how Shannon wrapped up the various storylines?",
+    "hasSpoilers": true,
+    "likes": 18,
+    "createdAt": "2024-01-13T16:45:00.000Z",
+    "author": {
+      "Id": 6,
+      "username": "DragonRider",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "Fantasy Lovers",
+    "comments": [
+      {
+        "Id": 103,
+        "authorId": 7,
+        "content": "The way she connected all the different cultures and their dragon lore was incredible. I loved seeing how each region's mythology tied together.",
+        "hasSpoilers": true,
+        "likes": 6,
+        "createdAt": "2024-01-13T17:30:00.000Z",
+        "author": {
+          "Id": 7,
+          "username": "LoreKeeper",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": []
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "clubId": 2,
+    "authorId": 8,
+    "title": "Enemies to lovers: guilty pleasure or legitimate trope?",
+    "content": "There's so much debate about enemies to lovers in romance. Some say it's overused, others live for it. Where do you stand?",
+    "hasSpoilers": false,
+    "likes": 42,
+    "createdAt": "2024-01-12T09:15:00.000Z",
+    "author": {
+      "Id": 8,
+      "username": "TropeQueen",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "Romance Readers",
+    "comments": [
+      {
+        "Id": 104,
+        "authorId": 9,
+        "content": "When it's done well, it's *chef's kiss*. The tension, the banter, the slow burn... but it needs to be believable, not just instalove disguised as enemies.",
+        "hasSpoilers": false,
+        "likes": 15,
+        "createdAt": "2024-01-12T10:00:00.000Z",
+        "author": {
+          "Id": 9,
+          "username": "SlowBurnLover",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": []
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "clubId": 2,
+    "authorId": 10,
+    "title": "Historical accuracy in historical romance",
+    "content": "How important is historical accuracy to you in historical romance? Are you okay with anachronisms if the story is compelling?",
+    "hasSpoilers": false,
+    "likes": 28,
+    "createdAt": "2024-01-11T13:30:00.000Z",
+    "author": {
+      "Id": 10,
+      "username": "HistoryBuff",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "Romance Readers",
+    "comments": [
+      {
+        "Id": 105,
+        "authorId": 11,
+        "content": "I'm willing to overlook some anachronisms for a good story, but blatant historical errors pull me out of the narrative completely.",
+        "hasSpoilers": false,
+        "likes": 9,
+        "createdAt": "2024-01-11T14:15:00.000Z",
+        "author": {
+          "Id": 11,
+          "username": "TimelineStickler",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": []
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "clubId": 3,
+    "authorId": 12,
+    "title": "Fourth Wing discussion - no spoilers please!",
+    "content": "Just started Fourth Wing and I'm already obsessed! The world-building is incredible. Who else is reading this? What are your thoughts so far?",
+    "hasSpoilers": false,
+    "likes": 36,
+    "createdAt": "2024-01-10T20:00:00.000Z",
+    "author": {
+      "Id": 12,
+      "username": "DragonRider23",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "Young Adult Adventures",
+    "comments": [
+      {
+        "Id": 106,
+        "authorId": 13,
+        "content": "The training scenes are so intense! I love how Rebecca Yarros writes action sequences. You can feel the danger.",
+        "hasSpoilers": false,
+        "likes": 11,
+        "createdAt": "2024-01-10T21:30:00.000Z",
+        "author": {
+          "Id": 13,
+          "username": "ActionReader",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": []
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "clubId": 4,
+    "authorId": 14,
+    "title": "Representation in fantasy: progress or still lacking?",
+    "content": "I've noticed more LGBTQ+ representation in fantasy lately, but is it enough? Are the portrayals authentic? Let's discuss!",
+    "hasSpoilers": false,
+    "likes": 25,
+    "createdAt": "2024-01-09T15:45:00.000Z",
+    "author": {
+      "Id": 14,
+      "username": "RepresentationMatters",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "LGBTQ+ Bookworms",
+    "comments": [
+      {
+        "Id": 107,
+        "authorId": 15,
+        "content": "I think we're making progress, but there's still a long way to go. I want to see more diverse identities and not just the same few tropes repeated.",
+        "hasSpoilers": false,
+        "likes": 7,
+        "createdAt": "2024-01-09T16:30:00.000Z",
+        "author": {
+          "Id": 15,
+          "username": "DiverseReader",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": []
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "clubId": 5,
+    "authorId": 16,
+    "title": "The Atlas Six: philosophy or pretension?",
+    "content": "I'm torn on The Atlas Six. The philosophical elements are intriguing, but sometimes it feels like it's trying too hard to be deep. Thoughts?",
+    "hasSpoilers": false,
+    "likes": 19,
+    "createdAt": "2024-01-08T12:00:00.000Z",
+    "author": {
+      "Id": 16,
+      "username": "PhilosophyStudent",
+      "avatar": "/api/placeholder/32/32"
+    },
+    "clubName": "Dark Academia Society",
+    "comments": [
+      {
+        "Id": 108,
+        "authorId": 17,
+        "content": "I think it walks a fine line. Some parts are genuinely thought-provoking, others feel like philosophical name-dropping. Still enjoyed it overall.",
+        "hasSpoilers": false,
+        "likes": 5,
+        "createdAt": "2024-01-08T13:15:00.000Z",
+        "author": {
+          "Id": 17,
+          "username": "AcademicReader",
+          "avatar": "/api/placeholder/32/32"
+        },
+        "replies": []
+      }
+    ]
+  }
+]
