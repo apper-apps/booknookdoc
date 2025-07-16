@@ -9,10 +9,12 @@ const Avatar = ({
   online = false,
   ...props 
 }) => {
-  const [imageError, setImageError] = useState(false);
+const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   
-const sizes = {
+  const baseStyles = "flex items-center justify-center rounded-full bg-surface ring-2 ring-primary/10 overflow-hidden relative shrink-0";
+  
+  const sizes = {
     xs: "w-6 h-6",
     sm: "w-8 h-8",
     md: "w-10 h-10",
