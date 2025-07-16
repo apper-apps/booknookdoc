@@ -13,6 +13,8 @@ const Header = ({ className, ...props }) => {
   const [notifications] = useState(3);
   const userState = useSelector((state) => state.user);
   const isAuthenticated = userState?.isAuthenticated || false;
+  const { logout } = useContext(AuthContext);
+
 const getPageTitle = () => {
     switch (location.pathname) {
       case "/":
@@ -105,12 +107,11 @@ if (location.pathname.startsWith("/quiz/")) {
                 online={true}
               />
               
-              <Button
+<Button
                 variant="ghost"
                 size="sm"
                 className="text-primary hover:text-primary/80"
                 onClick={() => {
-                  const { logout } = useContext(AuthContext);
                   logout();
                 }}
               >
