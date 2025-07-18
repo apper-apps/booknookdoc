@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "@/components/organisms/Header";
 import BottomNavigation from "@/components/molecules/BottomNavigation";
+import userService from "@/services/api/userService";
 import authService from "@/services/api/authService";
-
 const Layout = () => {
   const navigate = useNavigate();
 
